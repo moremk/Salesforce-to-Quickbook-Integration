@@ -1,6 +1,7 @@
 # Salesforce-to-Quickbook-Integration
 
 Trigger:
+
 trigger AccountTrigger on Account (after insert) {
     if (Trigger.isAfter && Trigger.isInsert) {
         List<Id> accountIds = new List<Id>();
@@ -12,8 +13,8 @@ trigger AccountTrigger on Account (after insert) {
 }
 
 Apex :
-public class QuickBooksCustomerService {
 
+public class QuickBooksCustomerService {
     @future(callout=true)
     public static void createCustomers(List<Id> accountIds) {
         
